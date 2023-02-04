@@ -1,2 +1,4 @@
-# Splunk-App-Exercise
-Custom Splunk App Exercise for Splunk FDSE
+# insightPilot Splunk Application
+## Navigating Data with Ease.
+
+Custom Splunk Application for the Splunk FDSE Takehome Exercise.
