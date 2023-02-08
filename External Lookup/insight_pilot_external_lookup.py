@@ -6,30 +6,6 @@ import socket
 import json
 import requests as req
 
-""" An adapter that takes CSV as input, performs a lookup to the operating
-    system hostname resolution facilities, then returns the CSV results 
-
-    This is intended as an example of creating external lookups in general.
-
-    Note that the script offers mapping both ways, from host to IP and from IP
-    to host.  
-    
-    Bidrectional mapping is always required when using an external lookup as an
-    'automatic' lookup: one configured to be used without explicit reference in
-    a search.
-
-    In the other use mode, eg in a search string as "|lookup lookupname", it is
-    sufficient to provide only the mappings that will be used.
-
-    WARNING: DNS is not unambiguously reversible, so this script will produce
-             unusual results when used for values that do not reverse-resolve to
-             their original values in your environment.
-
-             For example, if your events have host=foo, and you search for
-             ip=1.2.3.4, the generated search expression may be
-             host=foo.yourcompany.com, which will not match.
-"""
-
 def dummy_api_call(requestURL, parameters):
     response=req.get(url=requestURL,params=parameters)
     if response.status_code != 200:
